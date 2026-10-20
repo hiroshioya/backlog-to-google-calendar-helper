@@ -68,8 +68,9 @@
 
     const escapedKey = escapeRegExp(issueKey);
     const patterns = [
-      new RegExp(`^\\[?${escapedKey}\\]?\\s+(.+?)\\s*(?:\\||-).*$`, 'i'),
-      new RegExp(`^\\[?${escapedKey}\\]?\\s+(.+)$`, 'i')
+      // Backlogのdocument.titleは「課題キー 件名 | 課題の表示 | Backlog」の形式。
+      // 件名中のハイフンは通常文字として保持し、区切りの「 | 」だけで切る。
+      new RegExp(`^\\[?${escapedKey}\\]?\\s+(.+?)(?:\\s+\\|\\s+.*)?$`, 'i')
     ];
 
     for (const pattern of patterns) {
@@ -162,8 +163,9 @@
       throw new Error('課題キーまたは件名を取得できなかった');
     }
 
-    await writeClipboard(plainText, html);
-
+    // Calendar/Taskへの自動入力に必要なコンテキスト保存を先に行う。
+    // Clipboard APIはフォーカス状態やブラウザポリシーで失敗することがあるため、
+    // コピー失敗で本体の連携まで止めない。
     await new Promise((resolve, reject) => {
       chrome.runtime.sendMessage({
         type: 'SAVE_ISSUE_CONTEXT',
@@ -182,7 +184,15 @@
       });
     });
 
-    return { ok: true, plainText, mode };
+    let clipboardCopied = false;
+    try {
+      await writeClipboard(plainText, html);
+      clipboardCopied = true;
+    } catch (error) {
+      console.warn('[Backlog GCal Helper] clipboard copy skipped:', error);
+    }
+
+    return { ok: true, plainText, mode, clipboardCopied };
   }
 
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {

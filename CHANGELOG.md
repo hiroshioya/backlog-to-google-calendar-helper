@@ -5,7 +5,9 @@
 ## Chrome v0.4.6
 
 - Googleカレンダーの説明欄が `aria-labelledby="xDescIn-label"` を使うDOMに変更されたことに対応し、説明欄とBacklogへのリンクが自動入力されない問題を修正
-- 説明欄検出セレクタの追加以外はv0.4.5の動作を維持
+- クリップボード書き込みが `Document is not focused` などで失敗しても、課題情報の保存とCalendar / Taskへの自動入力を継続するよう修正
+- Backlog課題タイトル内のハイフンをページタイトルの区切りと誤認し、件名が途中で切れる問題を修正
+- 拡張更新後に既存タブで `Extension context invalidated` が出る場合の再読み込み手順をREADMEへ追記
 
 ## Chrome v0.4.5
 
