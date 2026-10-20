@@ -216,7 +216,10 @@
       'div[role="textbox"][contenteditable="true"][aria-label*="説明"]',
       'div[role="textbox"][contenteditable="true"][aria-label*="詳細"]',
       'div[role="textbox"][contenteditable="true"][aria-label*="Description"]',
-      'div[role="textbox"][contenteditable="true"][aria-label*="Details"]'
+      'div[role="textbox"][contenteditable="true"][aria-label*="Details"]',
+      // Google Calendar (2026-10 UI): description editor now uses aria-labelledby.
+      'div[role="textbox"][contenteditable="true"][aria-labelledby="xDescIn-label"]',
+      '[contenteditable="true"][aria-labelledby="xDescIn-label"]'
     ];
 
     if (context?.mode === 'task') {

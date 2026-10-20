@@ -17,7 +17,7 @@ Googleカレンダー側で予定作成画面を開くと、課題名やBacklog�
 
 | ブラウザ | バージョン | Calendar | Task | 標準ショートカット |
 | --- | --- | --- | --- | --- |
-| Google Chrome | v0.4.5 | 対応 | 対応 | `Ctrl/Cmd + Shift + L` / `Ctrl/Cmd + Shift + K` |
+| Google Chrome | v0.4.6 | 対応 | 対応 | `Ctrl/Cmd + Shift + L` / `Ctrl/Cmd + Shift + K` |
 | Microsoft Edge | v0.6.1 | 対応 | 対応 | `Alt + Shift + L` / `Alt + Shift + K` |
 
 Chrome版とEdge版は、個人利用の中で別々に調整してきたため、現時点ではバージョンと一部実装が異なります。公開にあたりプログラム本体の統合作業は行わず、現在利用しているコードをそのまま収録しています。
@@ -26,7 +26,7 @@ Chrome版とEdge版は、個人利用の中で別々に調整してきたため�
 
 ### Chrome
 
-1. `packages/backlog-to-google-calendar-helper-chrome-v0.4.5.zip` をダウンロードして展開する
+1. `packages/backlog-to-google-calendar-helper-chrome-v0.4.6.zip` をダウンロードして展開する
 2. Chromeで `chrome://extensions/` を開く
 3. 「デベロッパーモード」をONにする
 4. 「パッケージ化されていない拡張機能を読み込む」を選ぶ
@@ -83,7 +83,7 @@ Chrome版とEdge版は、個人利用の中で別々に調整してきたため�
 
 ## リポジトリ構成
 
-- `chrome/` : Chrome版 v0.4.5 のソース
+- `chrome/` : Chrome版 v0.4.6 のソース
 - `edge/` : Edge版 v0.6.1 のソース
 - `packages/` : 開発者モードで読み込むためのZIP
 - `docs/` : データの扱い・公開時の注意事項

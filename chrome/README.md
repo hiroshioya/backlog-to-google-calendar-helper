@@ -1,6 +1,10 @@
-# Chrome版 v0.4.5
+# Chrome版 v0.4.6
 
 Backlog to Google Calendar HelperのGoogle Chrome向けプロトタイプです。
+
+## v0.4.6の変更点
+
+Googleカレンダーの説明欄が `aria-labelledby="xDescIn-label"` を使うDOMに変更されたことに対応しました。その他の動作はv0.4.5から変更していません。
 
 ## ショートカット
 
@@ -9,7 +13,7 @@ Backlog to Google Calendar HelperのGoogle Chrome向けプロトタイプです�
 
 ## インストール
 
-1. このフォルダ、または `packages/backlog-to-google-calendar-helper-chrome-v0.4.5.zip` を展開したフォルダを用意する
+1. このフォルダ、または `packages/backlog-to-google-calendar-helper-chrome-v0.4.6.zip` を展開したフォルダを用意する
 2. `chrome://extensions/` を開く
 3. デベロッパーモードをON
 4. 「パッケージ化されていない拡張機能を読み込む」からフォルダを選ぶ

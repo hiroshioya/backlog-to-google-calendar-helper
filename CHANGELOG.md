@@ -2,6 +2,11 @@
 
 このリポジトリでは、Chrome版とEdge版を別々に利用・調整してきた履歴を保持しています。
 
+## Chrome v0.4.6
+
+- Googleカレンダーの説明欄が `aria-labelledby="xDescIn-label"` を使うDOMに変更されたことに対応し、説明欄とBacklogへのリンクが自動入力されない問題を修正
+- 説明欄検出セレクタの追加以外はv0.4.5の動作を維持
+
 ## Chrome v0.4.5
 
 - Calendar予定作成ショートカットを `Cmd + Shift + L` / `Ctrl + Shift + L` に変更
